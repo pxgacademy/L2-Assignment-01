@@ -104,14 +104,14 @@
     throw new Error("Something went wrong");
   }
 
-  function handleValue(val: string | number) {
-    if (typeof val === "string") {
+  function handleValue(value: string | number) {
+    if (typeof value === "string") {
       console.log("string");
-    } else if (typeof val === "number") {
+    } else if (typeof value === "number") {
       console.log("number");
     } else {
-      // val is of type 'never' here (should never happen)
-      const check: never = val;
+      // value is of type 'never' here (should never happen)
+      const check: never = value;
     }
   }
   ```
@@ -119,6 +119,34 @@
 
 
 ### 4. What is the use of enums in TypeScript? Provide an example of a numeric and string enum.
+  - In TypeScript, enum (short for enumeration) is a feature that lets you define a set of named constants, making your code more readable and expressive—especially when working with a limited set of values (like directions, states, roles, etc.).
+  - **Why Use Enums?**
+    - Improve code readability and intent
+    - Reduce the risk of invalid values
+    - Useful for fixed sets of values (e.g., days of the week, status codes)
+    ```typescript
+    // Example of numeric enum
+    enum Direction {
+      Up    = 0
+      Down  = 1
+      Left  = 2
+      Right = 3
+    }
+
+    let dir: Direction = Direction.Left;
+    console.log(dir); // 2
+
+    // Example of string enum
+    enum Color {
+      Red = "RED",
+      Green = "GREEN",
+      Blue = "BLUE"
+    }
+
+    let c: Color = Color.Green;
+    console.log(c); // "GREEN"
+    ```
+
 ### 5. What is type inference in TypeScript? Why is it helpful?
 ### 6. How does TypeScript help in improving code quality and project maintainability?
 ### 7. Provide an example of using union and intersection types in TypeScript.
